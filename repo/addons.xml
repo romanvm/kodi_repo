@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.ex.ua.alternative"
+version="2.2.8"
+name="EX.UA Video Alternative"
+provider-name="Roman V.M.">
+<requires>
+  <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="script.module.pyxbmct" version="1.1.4"/>
+  <import addon="script.module.xbmcswift2" version="2.4.0"/>
+  <import addon="script.module.beautifulsoup4" version="4.3.0"/>
+  <import addon="script.module.simple.downloader" version="1.9.0"/>
+  <import addon="script.module.html5lib" version="0.999.0"/>
+  <import addon="script.module.six" version="1.4.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="default.py">
+  <provides>video audio</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">EX.UA Video Alternative</summary>
+  <summary lang="ru">EX.UA Video Alternative</summary>
+  <summary lang="uk">EX.UA Video Alternative</summary>
+  <description lang="en">Addon for watching videos from EX.UA.</description>
+  <description lang="ru">Дополнение для просмотра видео c EX.UA.</description>
+  <description lang="uk">Надбудова для прегляду відео з EX.UA.</description>
+  <platform>all</platform>
+</extension>
+</addon>
+
+<addon id="plugin.video.rarbg.tv"
+version="2.9.0"
+name="Rarbg TV Shows"
+provider-name="Roman_V_M">
+<requires>
+  <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="script.module.requests" version="2.6.0"/>
+  <import addon="script.module.simpleplugin" version="1.0.0" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Rarbg TV Shows</summary>
+  <description lang="en">A video plugin for playing TV-show torrents from Rarbg.to.</description>
+</extension>
+</addon>
+
+<addon id="plugin.video.yatp"
+version="2.9.9o"
+name="Yet Another Torrent Player"
+provider-name="Roman V. M.">
+<requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+    <import addon="script.module.requests" version="2.6.0"/>
+    <import addon="script.module.libtorrent" version="0.16.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>video</provides>
+</extension>
+<extension point="xbmc.service" library="server.py" start="[login|startup]"/>
+<extension point="xbmc.addon.metadata">
+      <summary lang="en">Yet Another Torrent Player</summary>
+      <description lang="en">Yet another torrent player.</description>
+      <platform>all</platform>
+</extension>
+</addon>
+
+<addon id="repository.romanvm" version="2.0.0" name="Roman V.M. Repository" provider-name="Roman V.M.">
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Roman V.M. Repository</summary>
+  <summary lang="ru">Репозиторий Roman V.M.</summary>
+  <summary lang="uk">Репозиторій Roman V.M.</summary>
+  <description lang="en">Addon repository by Roman V.M.</description>
+  <description lang="ru">Репозиторий дополнений Roman V.M.</description>
+  <description lang="uk">Репозиторій надбудов Roman V.M.</description>
+  <platform>all</platform>
+</extension>
+<extension point="xbmc.addon.repository" name="romanvm repository">
+  <info compressed="false">http://romanvm.github.io/kodi_repo/repo/addons.xml</info>
+  <checksum>http://romanvm.github.io/kodi_repo/repo/addons.xml.md5</checksum>
+  <datadir zip="true">http://romanvm.github.io/kodi_repo/repo</datadir>
+</extension>
+</addon>
+
+<addon id='script.module.libtorrent' version='0.16.19i' name='LibTorrent' provider-name='DiMartino, srg70, RussakHH, aisman'>
+  <requires>
+    <import addon='xbmc.python' version='2.1.0'/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point='xbmc.addon.metadata'>
+    <platform>all</platform>
+    <summary>LibTorrent</summary>
+  </extension>
+  <extension point='xbmc.python.module'/>
+</addon>
+
+<addon id="script.module.simpleplugin"
+   name="SimplePlugin"
+   version="1.4.0"
+   provider-name="Roman V.M.">
+  <requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+  </requires>
+  <extension point="xbmc.python.module" library="libs" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">SimplePlugin micro-framework</summary>
+    <description lang="en">SimplePlugin micro-framework simplifies Kodi content plugin programming.</description>
+    <disclaimer lang="en"></disclaimer>
+    <language></language>
+    <license>GNU GPL v.3</license>
+    <forum></forum>
+    <website></website>
+    <email>romanvm@yandex.ua</email>
+    <source></source>
+  </extension>
+</addon>
+
+<addon id="service.subtitles.addic7ed"
+       name="Addic7ed.com"
+       version="1.0.4"
+       provider-name="Roman V.M.">
+<requires>
+    <import addon="xbmc.python" version="2.14.0"/>
+    <import addon="script.module.beautifulsoup4" version="4.3.0"/>
+</requires>
+<extension point="xbmc.subtitle.module" library="default.py" />
+<extension point="xbmc.addon.metadata">
+    <summary lang="en">Addic7ed.com Subtitles</summary>
+    <summary lang="ru">Субтитры Addic7ed.com</summary>
+    <summary lang="uk">Субтитри Addic7ed.com</summary>
+    <description lang="en">Subtitles service for Addic7ed.com.</description>
+    <description lang="ru">Служба субтитров для сайта Addic7ed.com.</description>
+    <description lang="uk">Служба субтитрів для сайту Addic7ed.com.</description>
+    <platform>all</platform>
+</extension>
+</addon>
+</addons>

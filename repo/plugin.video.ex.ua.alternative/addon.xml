@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.ex.ua.alternative"
+version="2.2.8"
+name="EX.UA Video Alternative"
+provider-name="Roman V.M.">
+<requires>
+  <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="script.module.pyxbmct" version="1.1.4"/>
+  <import addon="script.module.xbmcswift2" version="2.4.0"/>
+  <import addon="script.module.beautifulsoup4" version="4.3.0"/>
+  <import addon="script.module.simple.downloader" version="1.9.0"/>
+  <import addon="script.module.html5lib" version="0.999.0"/>
+  <import addon="script.module.six" version="1.4.0"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="default.py">
+  <provides>video audio</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">EX.UA Video Alternative</summary>
+  <summary lang="ru">EX.UA Video Alternative</summary>
+  <summary lang="uk">EX.UA Video Alternative</summary>
+  <description lang="en">Addon for watching videos from EX.UA.</description>
+  <description lang="ru">Дополнение для просмотра видео c EX.UA.</description>
+  <description lang="uk">Надбудова для прегляду відео з EX.UA.</description>
+  <platform>all</platform>
+</extension>
+</addon>
