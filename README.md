@@ -1,2 +1,1 @@
-# kodi_repo
-A repository for my Kodi addons
+This is a repository for my Kodi addons
