@@ -28,7 +28,11 @@ provider-name="Roman V.M.">
 </addon>
 
 <addon id="plugin.video.rarbg.tv"
+<<<<<<< HEAD
 version="3.0.1"
+=======
+version="3.0.0"
+>>>>>>> c86645fedd78c360597657e19b4bffaf8a1b9478
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
@@ -46,7 +50,7 @@ provider-name="Roman_V_M">
 </addon>
 
 <addon id="plugin.video.yatp"
-version="2.9.9q"
+version="2.9.9r"
 name="Yet Another Torrent Player"
 provider-name="Roman V. M.">
 <requires>
