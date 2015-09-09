@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.rarbg.tv"
-<<<<<<< HEAD
 version="3.0.1"
-=======
-version="3.0.0"
->>>>>>> c86645fedd78c360597657e19b4bffaf8a1b9478
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
