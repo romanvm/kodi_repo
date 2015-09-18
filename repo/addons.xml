@@ -28,7 +28,7 @@ provider-name="Roman V.M.">
 </addon>
 
 <addon id="plugin.video.rarbg.tv"
-version="3.0.4"
+version="3.1.0"
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
