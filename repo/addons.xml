@@ -98,7 +98,7 @@ provider-name="Roman V. M.">
 
 <addon id="script.module.simpleplugin"
    name="SimplePlugin"
-   version="1.5.1"
+   version="1.5.2"
    provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.14.0"/>
@@ -112,9 +112,9 @@ provider-name="Roman V. M.">
     <language></language>
     <license>GNU GPL v.3</license>
     <forum></forum>
-    <website></website>
+    <website>https://github.com/romanvm/script.module.simpleplugin/wiki</website>
     <email>romanvm@yandex.ua</email>
-    <source></source>
+    <source>https://github.com/romanvm/script.module.simpleplugin</source>
   </extension>
 </addon>
 
