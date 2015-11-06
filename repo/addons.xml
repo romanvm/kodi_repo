@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 <addon id="plugin.video.ex.ua.alternative"
-version="2.2.9"
+version="2.2.10"
 name="EX.UA Video Alternative"
 provider-name="Roman V.M.">
 <requires>
@@ -98,7 +98,7 @@ provider-name="Roman V. M.">
 
 <addon id="script.module.simpleplugin"
    name="SimplePlugin"
-   version="1.5.3"
+   version="1.5.4"
    provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.14.0"/>
