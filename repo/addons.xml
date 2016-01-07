@@ -47,7 +47,7 @@ provider-name="Roman_V_M">
 </addon>
 
 <addon id="plugin.video.yatp"
-  version="3.0.12"
+  version="3.0.13"
   name="Yet Another Torrent Player"
   provider-name="Roman V. M.">
 <requires>
