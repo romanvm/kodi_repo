@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.yatp"
-<<<<<<< HEAD
   version="3.1.13"
-=======
-  version="3.1.11"
->>>>>>> 1909f2e17d963b78d004a67f7a827acb9a56db53
   name="Yet Another Torrent Player"
   provider-name="Roman V. M.">
 <requires>
