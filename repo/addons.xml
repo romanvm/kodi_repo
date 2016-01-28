@@ -28,7 +28,7 @@ provider-name="Roman V.M.">
 </addon>
 
 <addon id="plugin.video.rarbg.tv"
-version="3.3.2"
+version="3.3.4"
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
@@ -47,7 +47,11 @@ provider-name="Roman_V_M">
 </addon>
 
 <addon id="plugin.video.yatp"
+<<<<<<< HEAD
   version="3.1.13"
+=======
+  version="3.1.11"
+>>>>>>> 1909f2e17d963b78d004a67f7a827acb9a56db53
   name="Yet Another Torrent Player"
   provider-name="Roman V. M.">
 <requires>
@@ -99,7 +103,7 @@ provider-name="Roman_V_M">
 
 <addon id="script.module.simpleplugin"
    name="SimplePlugin"
-   version="1.6.0"
+   version="1.6.2"
    provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.19.0"/>
@@ -119,7 +123,7 @@ provider-name="Roman_V_M">
 
 <addon id="service.subtitles.addic7ed"
        name="Addic7ed.com"
-       version="1.0.10"
+       version="1.0.12"
        provider-name="Roman V.M.">
 <requires>
     <import addon="xbmc.python" version="2.14.0"/>
