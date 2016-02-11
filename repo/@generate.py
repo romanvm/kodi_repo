@@ -1,9 +1,13 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
 import os
 import sys
 
 # Compatibility with 3.0, 3.1 and 3.2 not supporting u"" literals
 if sys.version < '3':
     import codecs
+    open = codecs.open
     def u(x):
         return codecs.unicode_escape_decode(x)[0]
 else:
@@ -36,7 +40,7 @@ class Generator:
                 # create path
                 _path = os.path.join( addon, "addon.xml" )
                 # split lines for stripping
-                xml_lines = codecs.open( _path, "r" , encoding="UTF-8").read().splitlines()
+                xml_lines = open( _path, "r" , encoding="UTF-8").read().splitlines()
                 # new addon
                 addon_xml = ""
                 # loop thru cleaning each line
