@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.rarbg.tv"
-version="3.3.4"
+version="3.4.0"
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
@@ -8,6 +8,7 @@ provider-name="Roman_V_M">
   <import addon="script.module.requests" version="2.6.0"/>
   <import addon="script.module.simpleplugin" version="1.0.0" />
   <import addon="script.module.simplejson" version="3.3.0" />
+  <import addon="plugin.video.yatp" version="3.1.0" />
 </requires>
 <extension point="xbmc.python.pluginsource" library="main.py">
   <provides>video</provides>
