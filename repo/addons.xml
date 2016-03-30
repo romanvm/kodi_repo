@@ -105,7 +105,7 @@ provider-name="Roman_V_M">
 
 <addon id="script.module.simpleplugin"
    name="SimplePlugin"
-   version="1.6.8"
+   version="1.7.0"
    provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.19.0"/>
