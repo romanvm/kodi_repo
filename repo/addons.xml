@@ -28,7 +28,7 @@ provider-name="Roman V.M.">
 </addon>
 
 <addon id="plugin.video.ex.ua.alternative3"
-version="2.99.1"
+version="2.99.2"
 name="EX.UA Video Alternative 3"
 provider-name="Roman V.M.">
 <requires>
