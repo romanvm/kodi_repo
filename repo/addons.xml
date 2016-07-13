@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 <addon id="plugin.video.ex.ua.alternative"
-version="2.2.10"
+version="3.0.0"
 name="EX.UA Video Alternative"
 provider-name="Roman V.M.">
 <requires>
   <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="script.module.simpleplugin" version="1.10.0"/>
   <import addon="script.module.pyxbmct" version="1.1.4"/>
-  <import addon="script.module.xbmcswift2" version="2.4.0"/>
+  <import addon="script.module.requests" version="2.9.0"/>
   <import addon="script.module.beautifulsoup4" version="4.3.0"/>
-  <import addon="script.module.simple.downloader" version="1.9.0"/>
   <import addon="script.module.html5lib" version="0.999.0"/>
   <import addon="script.module.six" version="1.4.0"/>
 </requires>
-<extension point="xbmc.python.pluginsource" library="default.py">
+<extension point="xbmc.python.pluginsource" library="main.py">
   <provides>video audio</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
