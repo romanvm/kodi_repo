@@ -27,33 +27,6 @@ provider-name="Roman V.M.">
 </extension>
 </addon>
 
-<addon id="plugin.video.ex.ua.alternative3"
-version="2.99.2"
-name="EX.UA Video Alternative 3"
-provider-name="Roman V.M.">
-<requires>
-  <import addon="xbmc.python" version="2.14.0"/>
-  <import addon="script.module.simpleplugin" version="1.10.0"/>
-  <import addon="script.module.pyxbmct" version="1.1.4"/>
-  <import addon="script.module.requests" version="2.9.0"/>
-  <import addon="script.module.beautifulsoup4" version="4.3.0"/>
-  <import addon="script.module.html5lib" version="0.999.0"/>
-  <import addon="script.module.six" version="1.4.0"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="main.py">
-  <provides>video audio</provides>
-</extension>
-<extension point="xbmc.addon.metadata">
-  <summary lang="en">EX.UA Video Alternative</summary>
-  <summary lang="ru">EX.UA Video Alternative</summary>
-  <summary lang="uk">EX.UA Video Alternative</summary>
-  <description lang="en">Addon for watching videos from EX.UA.</description>
-  <description lang="ru">Дополнение для просмотра видео c EX.UA.</description>
-  <description lang="uk">Надбудова для прегляду відео з EX.UA.</description>
-  <platform>all</platform>
-</extension>
-</addon>
-
 <addon id="plugin.video.rarbg.tv"
 version="3.5.2"
 name="Rarbg TV Shows"
@@ -72,28 +45,6 @@ provider-name="Roman_V_M">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">Rarbg TV Shows</summary>
   <description lang="en">A video plugin for playing TV-show torrents from Rarbg.to.</description>
-</extension>
-</addon>
-
-<addon id="plugin.video.yatp"
-  version="3.2.1"
-  name="Yet Another Torrent Player"
-  provider-name="Roman V. M.">
-<requires>
-  <import addon="xbmc.python" version="2.14.0"/>
-  <import addon="script.module.requests" version="2.6.0"/>
-  <import addon="script.module.simpleplugin" version="1.6.0"/>
-  <import addon="script.module.libtorrent" version="1.0.9"/>
-</requires>
-<extension point="xbmc.python.pluginsource" library="main.py">
-  <provides>video</provides>
-</extension>
-<extension point="xbmc.service" library="server.py" start="[login|startup]"/>
-<extension point="xbmc.addon.metadata">
-  <summary lang="en">Yet Another Torrent Player</summary>
-  <description lang="en">A torrent client that allows to play video torrents
-    while downloading them in the background.</description>
-  <platform>all</platform>
 </extension>
 </addon>
 
