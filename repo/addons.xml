@@ -48,6 +48,28 @@ provider-name="Roman_V_M">
 </extension>
 </addon>
 
+<addon id="plugin.video.yatp"
+  version="3.2.2"
+  name="Yet Another Torrent Player"
+  provider-name="Roman V.M.">
+<requires>
+  <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="script.module.requests" version="2.6.0"/>
+  <import addon="script.module.simpleplugin" version="1.10.0"/>
+  <import addon="script.module.libtorrent" version="1.0.9"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.service" library="server.py" start="[login|startup]"/>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Yet Another Torrent Player</summary>
+  <description lang="en">A torrent client that allows to play video torrents
+    while downloading them in the background.</description>
+  <platform>all</platform>
+</extension>
+</addon>
+
 <addon id="repository.romanvm" version="2.0.0" name="Roman V.M. Repository" provider-name="Roman V.M.">
 <extension point="xbmc.addon.metadata">
   <summary lang="en">Roman V.M. Repository</summary>
