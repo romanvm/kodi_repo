@@ -107,7 +107,7 @@ provider-name="Roman_V_M">
 
 <addon id="script.module.remote-pdb"
        name="remote-pdb"
-       version="1.2.0c"
+       version="1.2.0f"
        provider-name="Ionel Cristian Mărieș, Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.19.0"/>
