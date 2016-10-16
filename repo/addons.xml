@@ -87,7 +87,7 @@ provider-name="Roman_V_M">
 </extension>
 </addon>
 
-<addon id='script.module.libtorrent' version='1.1.0e' name='python-libtorrent' provider-name='DiMartino, srg70, RussakHH, aisman, inpos'>
+<addon id='script.module.libtorrent' version='1.1.1b' name='python-libtorrent' provider-name='DiMartino, srg70, RussakHH, aisman, inpos'>
   <requires>
     <import addon='xbmc.python' version='2.1.0'/>
   </requires>
