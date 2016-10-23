@@ -28,13 +28,13 @@ provider-name="Roman V.M.">
 </addon>
 
 <addon id="plugin.video.rarbg.tv"
-version="3.5.5"
+version="3.5.6"
 name="Rarbg TV Shows"
 provider-name="Roman_V_M">
 <requires>
-  <import addon="xbmc.python" version="2.14.0"/>
+  <import addon="xbmc.python" version="2.19.0"/>
   <import addon="script.module.requests" version="2.6.0"/>
-  <import addon="script.module.simpleplugin" version="1.1.0" />
+  <import addon="script.module.simpleplugin" version="2.0.0" />
   <import addon="script.module.pyxbmct" version="1.1.0" />
   <import addon="plugin.video.yatp" version="3.1.0" />
 </requires>
