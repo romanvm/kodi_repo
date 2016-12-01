@@ -23,5 +23,6 @@ provider-name="Roman V.M.">
   <description lang="ru">Дополнение для просмотра видео c EX.UA.</description>
   <description lang="uk">Надбудова для прегляду відео з EX.UA.</description>
   <platform>all</platform>
+  <broken>The service is closed</broken>
 </extension>
 </addon>
