@@ -1,123 +1,82 @@
 #!/usr/bin/env python
-# *
-# *  Copyright (C) 2014-2015 Roman Miroshnychenko
-# *  Copyright (C) 2012-2013 Garrett Brown
-# *  Copyright (C) 2010      j48antialias
-# *
-# *  This Program is free software; you can redistribute it and/or modify
-# *  it under the terms of the GNU General Public License as published by
-# *  the Free Software Foundation; either version 2, or (at your option)
-# *  any later version.
-# *
-# *  This Program is distributed in the hope that it will be useful,
-# *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-# *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# *  GNU General Public License for more details.
-# *
-# *  You should have received a copy of the GNU General Public License
-# *  along with XBMC; see the file COPYING.  If not, write to
-# *  the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
-# *  http://www.gnu.org/copyleft/gpl.html
-# *
-# *  Based on code by j48antialias:
-# *  https://anarchintosh-projects.googlecode.com/files/addons_xml_generator.py
+# coding: utf-8
+#
+# Copyright (c) 2017, Roman Miroshnychenko <romanvm@yandex.ua>
 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+"""
+Script for generating xml and md5 files for a custom Kodi addons repository
+
+It should work with both Python 2 and 3
+"""
 from __future__ import print_function
-import os
-import sys
+
 import hashlib
-from traceback import print_exc
+import os
+import xml.dom.minidom as dom
 
-# Compatibility with 3.0, 3.1 and 3.2 not supporting u'' literals
-if sys.version < '3':
-    import codecs
-    open = codecs.open
-
-    def u(x):
-        return codecs.unicode_escape_decode(x)[0]
-else:
-    def u(x):
-        return x
+this_dir = os.path.dirname(os.path.abspath(__file__))
 
 
-class Generator:
-    '''
-    Generates a new addons.xml file from each addons addon.xml file
-    and a new addons.xml.md5 hash file. Must be run from the root of
-    the checked-out repo. Only handles single depth folder structure.
-    '''
-    def __init__(self):
-        # generate files
-        self._generate_addons_file()
-        self._generate_md5_file()
-        # notify user
-        print('Finished updating addons xml and md5 files')
+def get_addon_dirs():
+    for item in os.listdir(this_dir):
+        full_path = os.path.join(this_dir, item)
+        if os.path.isdir(full_path):
+            yield full_path
 
-    def _generate_addons_file(self):
-        cwd = os.path.dirname(os.path.abspath(__file__))
-        # addon list
-        addons = os.listdir(cwd)
-        # final addons text
-        addons_xml = u('<?xml version=\'1.0\' encoding=\'UTF-8\' standalone=\'yes\'?>\n<addons>\n')
-        # loop thru and add each addons addon.xml file
-        for addon in addons:
-            try:
-                # skip any file or .svn folder or .git folder
-                if not os.path.isdir(addon) or addon == '.svn' or addon == '.git':
-                    continue
-                # create path
-                _path = os.path.join(addon, 'addon.xml')
-                # split lines for stripping
-                with open(_path, 'r', encoding='UTF-8') as fo:
-                    xml_lines = fo.read().splitlines()
-                # new addon
-                addon_xml = ''
-                # loop thru cleaning each line
-                for line in xml_lines:
-                    # skip encoding format line
-                    if (line.find('<?xml') >= 0):
-                        continue
-                    # add line
-                    if sys.version < '3':
-                        addon_xml += unicode(line.rstrip() + '\n')
-                    else:
-                        addon_xml += line.rstrip() + '\n'
-                # we succeeded so add to our final addons.xml text
-                addons_xml += addon_xml.rstrip() + '\n\n'
-                for zip_file in os.listdir(os.path.join(cwd, addon)):
-                    if os.path.splitext(zip_file)[1] != '.zip':
-                        continue
-                    zip_name = os.path.join(cwd, addon, zip_file)
-                    with open(zip_name, 'rb') as fo:
-                        m = hashlib.md5(fo.read()).hexdigest()
-                    with open(zip_name + '.md5', 'wb') as fo:
-                        fo.write(m.encode('utf-8'))
-            except Exception as e:
-                # missing or poorly formatted addon.xml
-                print('Excluding %s for %s' % (_path, e))
-        # clean and add closing tag
-        addons_xml = addons_xml.strip() + u('\n</addons>\n')
-        # save file
-        self._save_file(addons_xml.encode('UTF-8'), file='addons.xml')
 
-    def _generate_md5_file(self):
-        # create a new md5 hash
-        with open('addons.xml', 'r', encoding='UTF-8') as fo:
-            m = hashlib.md5(fo.read().encode('UTF-8')).hexdigest()
+def generate_addons_xml(dirs):
+    doc = dom.Document()
+    root = doc.createElement('addons')
+    doc.appendChild(root)
+    for item in dirs:
+        addon_xml = os.path.join(item, 'addon.xml')
+        if os.path.exists(addon_xml):
+            xml = dom.parse(addon_xml)
+            root.appendChild(xml.firstChild)
+    contents = doc.toprettyxml(newl='', encoding='utf-8')
+    with open('addons.xml', 'wb') as fo:
+        fo.write(contents)
+    with open('addons.xml.md5', 'w') as fo:
+        fo.write(hashlib.md5(contents).hexdigest())
 
-        # save file
-        try:
-            self._save_file(m.encode('UTF-8'), file='addons.xml.md5')
-        except:
-            # oops
-            print('An error occurred creating addons.xml.md5 file!')
-            print_exc()
 
-    def _save_file(self, data, file):
-        with open(file, 'wb') as fo:
-            fo.write(data)
+def generate_zip_md5s(dirs):
+    for dir_item in dirs:
+        for item in os.listdir(dir_item):
+            if os.path.splitext(item)[1].lower() == '.zip':
+                zip_file = os.path.join(dir_item, item)
+                with open(zip_file, 'rb') as fo:
+                    zip_contents = fo.read()
+                with open(zip_file + '.md5', 'w') as fo:
+                    fo.write(hashlib.md5(zip_contents).hexdigest())
+
+
+def main():
+    addon_dirs = list(get_addon_dirs())
+    print('Generating addons.xml and md5...')
+    generate_addons_xml(addon_dirs)
+    print('Generating md5 for individual ZIPs...')
+    generate_zip_md5s(addon_dirs)
+    print('Repository updated successfully.')
 
 
 if __name__ == '__main__':
-    # start
-    Generator()
+    main()
