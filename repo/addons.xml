@@ -100,11 +100,12 @@
     			<email>romanvm@yandex.ua</email>			
     			<source>https://github.com/romanvm/script.module.simpleplugin</source>			
   		</extension>		
-	</addon>	<addon id="service.subtitles.addic7ed" name="Addic7ed.com" provider-name="Roman V.M." version="2.0.1">		
+	</addon>	<addon id="service.subtitles.addic7ed" name="Addic7ed.com" provider-name="Roman V.M." version="2.1.0">		
 		<requires>			
   			<import addon="xbmc.python" version="2.19.0"/>			
-  			<import addon="script.module.beautifulsoup" version="3.2.0"/>			
-  			<import addon="script.module.requests" version="2.9.0"/>			
+  			<import addon="script.module.beautifulsoup4"/>			
+  			<import addon="script.module.html5lib"/>			
+  			<import addon="script.module.requests"/>			
 		</requires>		
 		<extension library="main.py" point="xbmc.subtitle.module"/>		
 		<extension point="xbmc.addon.metadata">			
