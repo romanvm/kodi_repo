@@ -21,6 +21,20 @@
   			<platform>all</platform>			
   			<broken>The service is closed</broken>			
 		</extension>		
+	</addon>	<addon id="plugin.video.external.library" name="Kodi External Video Library" provider-name="Roman V.M." version="0.0.4">		
+		<requires>			
+  			<import addon="xbmc.python" version="2.19.0"/>			
+  			<import addon="script.module.requests" version="2.6.0"/>			
+  			<import addon="script.module.simpleplugin" version="2.0"/>			
+		</requires>		
+		<extension library="main.py" point="xbmc.python.pluginsource">			
+  			<provides>video</provides>			
+		</extension>		
+		<extension library="service.py" point="xbmc.service"/>		
+		<extension point="xbmc.addon.metadata">			
+  			<summary lang="en">Kodi External Video Library</summary>			
+  			<description lang="en">A plugin that allows to browse video library on an external Kodi instance.</description>			
+		</extension>		
 	</addon>	<addon id="plugin.video.rarbg.tv" name="Rarbg TV Shows" provider-name="Roman_V_M" version="3.6.1">		
 		<requires>			
   			<import addon="xbmc.python" version="2.19.0"/>			
@@ -99,6 +113,17 @@
     			<website>http://romanvm.github.io/script.module.simpleplugin</website>			
     			<email>romanvm@yandex.ua</email>			
     			<source>https://github.com/romanvm/script.module.simpleplugin</source>			
+  		</extension>		
+	</addon>	<addon id="script.service.playtime" name="Playtime label" provider-name="Roman_V_M" version="0.0.6">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.1.0"/>			    
+  		</requires>		
+  		<extension library="default.py" point="xbmc.service" start="[login|startup]">
+  </extension>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en">Playtime/Battery label</summary>			
+    			<description lang="en">Shows play times and battery level on fullscreen video.</description>			
   		</extension>		
 	</addon>	<addon id="service.subtitles.addic7ed" name="Addic7ed.com" provider-name="Roman V.M." version="2.1.0">		
 		<requires>			

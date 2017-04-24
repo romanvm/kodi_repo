@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="plugin.video.external.library"
+version="0.0.4"
+name="Kodi External Video Library"
+provider-name="Roman V.M.">
+<requires>
+  <import addon="xbmc.python" version="2.19.0"/>
+  <import addon="script.module.requests" version="2.6.0"/>
+  <import addon="script.module.simpleplugin" version="2.0" />
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.service" library="service.py" />
+<extension point="xbmc.addon.metadata">
+  <summary lang="en">Kodi External Video Library</summary>
+  <description lang="en">A plugin that allows to browse video library on an external Kodi instance.</description>
+</extension>
+</addon>
