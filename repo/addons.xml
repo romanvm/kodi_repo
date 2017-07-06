@@ -35,7 +35,7 @@
   			<summary lang="en">Kodi External Video Library</summary>			
   			<description lang="en">A plugin that allows to browse video library on an external Kodi instance.</description>			
 		</extension>		
-	</addon>	<addon id="plugin.video.yatp" name="Yet Another Torrent Player" provider-name="Roman V.M." version="3.3.1">		
+	</addon>	<addon id="plugin.video.yatp" name="Yet Another Torrent Player" provider-name="Roman V.M." version="3.3.2">		
 		<requires>			
   			<import addon="xbmc.python" version="2.19.0"/>			
   			<import addon="script.module.requests" version="2.6.0"/>			
