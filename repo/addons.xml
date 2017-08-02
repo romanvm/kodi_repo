@@ -83,6 +83,19 @@
     			<source>https://github.com/DiMartinoXBMC/script.module.libtorrent</source>			
   		</extension>		
   		<extension point="xbmc.python.module"/>		
+	</addon>	<addon id="script.module.pymongo" name="PyMongo" provider-name="Bernie Hackett" version="3.4.0">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.20.0"/>			
+  		</requires>		
+  		<extension library="lib" point="xbmc.python.module"/>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en_GB">Python driver for MongoDB</summary>			
+    			<description lang="en_GB">The PyMongo distribution contains tools for interacting with MongoDB database from Python.</description>			
+    			<license>Apache</license>			
+    			<website>https://www.mongodb.com</website>			
+    			<source>https://github.com/mongodb/mongo-python-driver</source>			
+  		</extension>		  
 	</addon>	<addon id="script.module.simpleplugin" name="SimplePlugin" provider-name="Roman V.M." version="2.2.0">		
   		<requires>			
     			<import addon="xbmc.python" version="2.19.0"/>			
