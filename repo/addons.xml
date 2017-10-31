@@ -1,27 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><addons>	<addon id="plugin.video.ex.ua.alternative" name="EX.UA Video Alternative" provider-name="Roman V.M." version="3.1.1">		
-		<requires>			
-  			<import addon="xbmc.python" version="2.14.0"/>			
-  			<import addon="script.module.simpleplugin" version="1.10.0"/>			
-  			<import addon="script.module.pyxbmct" version="1.1.4"/>			
-  			<import addon="script.module.requests" version="2.9.0"/>			
-  			<import addon="script.module.beautifulsoup4" version="4.3.0"/>			
-  			<import addon="script.module.html5lib" version="0.999.0"/>			
-  			<import addon="script.module.six" version="1.4.0"/>			
-		</requires>		
-		<extension library="main.py" point="xbmc.python.pluginsource">			
-  			<provides>video audio</provides>			
-		</extension>		
-		<extension point="xbmc.addon.metadata">			
-  			<summary lang="en">EX.UA Video Alternative</summary>			
-  			<summary lang="ru">EX.UA Video Alternative</summary>			
-  			<summary lang="uk">EX.UA Video Alternative</summary>			
-  			<description lang="en">Addon for watching videos from EX.UA.</description>			
-  			<description lang="ru">Дополнение для просмотра видео c EX.UA.</description>			
-  			<description lang="uk">Надбудова для прегляду відео з EX.UA.</description>			
-  			<platform>all</platform>			
-  			<broken>The service is closed</broken>			
-		</extension>		
-	</addon>	<addon id="plugin.video.external.library" name="Kodi External Video Library" provider-name="Roman V.M." version="0.0.4">		
+<?xml version="1.0" encoding="utf-8"?><addons>	<addon id="plugin.video.external.library" name="Kodi External Video Library" provider-name="Roman V.M." version="0.0.4">		
 		<requires>			
   			<import addon="xbmc.python" version="2.19.0"/>			
   			<import addon="script.module.requests" version="2.6.0"/>			
