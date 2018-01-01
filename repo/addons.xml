@@ -73,7 +73,7 @@
     			<website>https://www.mongodb.com</website>			
     			<source>https://github.com/mongodb/mongo-python-driver</source>			
   		</extension>		  
-	</addon>	<addon id="script.module.simpleplugin" name="SimplePlugin" provider-name="Roman V.M." version="2.3.1">		
+	</addon>	<addon id="script.module.simpleplugin" name="SimplePlugin" provider-name="Roman V.M." version="2.3.2">		
   		<requires>			
     			<import addon="xbmc.python" version="2.19.0"/>			
   		</requires>		
