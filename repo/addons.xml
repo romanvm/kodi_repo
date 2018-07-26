@@ -1,34 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><addons>	<addon id="plugin.video.external.library" name="Kodi External Video Library" provider-name="Roman V.M." version="0.0.4">		
-		<requires>			
-  			<import addon="xbmc.python" version="2.19.0"/>			
-  			<import addon="script.module.requests" version="2.6.0"/>			
-  			<import addon="script.module.simpleplugin" version="2.0"/>			
-		</requires>		
-		<extension library="main.py" point="xbmc.python.pluginsource">			
-  			<provides>video</provides>			
-		</extension>		
-		<extension library="service.py" point="xbmc.service"/>		
-		<extension point="xbmc.addon.metadata">			
-  			<summary lang="en">Kodi External Video Library</summary>			
-  			<description lang="en">A plugin that allows to browse video library on an external Kodi instance.</description>			
-		</extension>		
-	</addon>	<addon id="plugin.video.yatp" name="Yet Another Torrent Player" provider-name="Roman V.M." version="3.3.2">		
-		<requires>			
-  			<import addon="xbmc.python" version="2.19.0"/>			
-  			<import addon="script.module.requests" version="2.6.0"/>			
-  			<import addon="script.module.simpleplugin" version="1.10.0"/>			
-  			<import addon="script.module.libtorrent" version="1.0.9"/>			
-		</requires>		
-		<extension library="main.py" point="xbmc.python.pluginsource">			
-  			<provides>video</provides>			
-		</extension>		
-		<extension library="server.py" point="xbmc.service" start="[login|startup]"/>		
-		<extension point="xbmc.addon.metadata">			
-  			<summary lang="en">Yet Another Torrent Player</summary>			
-  			<description lang="en">A torrent client that allows to play video torrents
-    while downloading them in the background.</description>			
-  			<platform>all</platform>			
-		</extension>		
+<?xml version="1.0" encoding="utf-8"?><addons>	<addon id="script.module.pymongo" name="PyMongo" provider-name="Bernie Hackett" version="3.4.0">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.20.0"/>			
+  		</requires>		
+  		<extension library="lib" point="xbmc.python.module"/>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en_GB">Python driver for MongoDB</summary>			
+    			<description lang="en_GB">The PyMongo distribution contains tools for interacting with MongoDB database from Python.</description>			
+    			<license>Apache</license>			
+    			<website>https://www.mongodb.com</website>			
+    			<source>https://github.com/mongodb/mongo-python-driver</source>			
+  		</extension>		  
 	</addon>	<addon id="repository.romanvm" name="Roman V.M. Repository" provider-name="Roman V.M." version="2.0.0">		
 		<extension point="xbmc.addon.metadata">			
   			<summary lang="en">Roman V.M. Repository</summary>			
@@ -44,61 +26,6 @@
   			<checksum>http://romanvm.github.io/kodi_repo/repo/addons.xml.md5</checksum>			
   			<datadir zip="true">http://romanvm.github.io/kodi_repo/repo</datadir>			
 		</extension>		
-	</addon>	<addon id="script.module.libtorrent" name="python-libtorrent" provider-name="DiMartino, srg70, RussakHH, aisman, inpos" version="1.1.1c">		
-  		<requires>			
-    			<import addon="xbmc.python" version="2.1.0"/>			
-  		</requires>		
-  		<extension library="default.py" point="xbmc.python.script">			
-    			<provides>executable</provides>			
-  		</extension>		
-  		<extension library="python_libtorrent" point="xbmc.python.module"/>		
-  		<extension point="xbmc.addon.metadata">			
-    			<platform>all</platform>			
-    			<summary lang="en">script.module.libtorrent is a Kodi module that makes easy import of python-libtorrent for you.</summary>			
-    			<summary lang="ru">script.module.libtorrent - модуль Kodi, который упрощает импорт библиотеки python-libtorrent.</summary>			
-    			<license>MIT License</license>			
-    			<source>https://github.com/DiMartinoXBMC/script.module.libtorrent</source>			
-  		</extension>		
-  		<extension point="xbmc.python.module"/>		
-	</addon>	<addon id="script.module.pymongo" name="PyMongo" provider-name="Bernie Hackett" version="3.4.0">		
-  		<requires>			
-    			<import addon="xbmc.python" version="2.20.0"/>			
-  		</requires>		
-  		<extension library="lib" point="xbmc.python.module"/>		
-  		<extension point="xbmc.addon.metadata">			
-    			<platform>all</platform>			
-    			<summary lang="en_GB">Python driver for MongoDB</summary>			
-    			<description lang="en_GB">The PyMongo distribution contains tools for interacting with MongoDB database from Python.</description>			
-    			<license>Apache</license>			
-    			<website>https://www.mongodb.com</website>			
-    			<source>https://github.com/mongodb/mongo-python-driver</source>			
-  		</extension>		  
-	</addon>	<addon id="script.module.simpleplugin" name="SimplePlugin" provider-name="Roman V.M." version="2.3.2">		
-  		<requires>			
-    			<import addon="xbmc.python" version="2.19.0"/>			
-  		</requires>		
-  		<extension library="libs" point="xbmc.python.module"/>		
-  		<extension point="xbmc.addon.metadata">			
-    			<platform>all</platform>			
-    			<summary lang="en">SimplePlugin micro-framework</summary>			
-    			<description lang="en">SimplePlugin micro-framework that simplifies Kodi content plugin programming.</description>			
-    			<license>GNU GPL v.3</license>			
-    			<forum>http://forum.kodi.tv/showthread.php?tid=237532</forum>			
-    			<website>http://romanvm.github.io/script.module.simpleplugin</website>			
-    			<email>romanvm@yandex.ua</email>			
-    			<source>https://github.com/romanvm/script.module.simpleplugin</source>			
-  		</extension>		
-	</addon>	<addon id="script.service.playtime" name="Playtime label" provider-name="Roman_V_M" version="0.0.6">		
-  		<requires>			
-    			<import addon="xbmc.python" version="2.1.0"/>			    
-  		</requires>		
-  		<extension library="default.py" point="xbmc.service" start="[login|startup]">
-  </extension>		
-  		<extension point="xbmc.addon.metadata">			
-    			<platform>all</platform>			
-    			<summary lang="en">Playtime/Battery label</summary>			
-    			<description lang="en">Shows play times and battery level on fullscreen video.</description>			
-  		</extension>		
 	</addon>	<addon id="service.subtitles.addic7ed" name="Addic7ed.com" provider-name="Roman V.M." version="2.2.2">		
 		<requires>			
   			<import addon="xbmc.python" version="2.24.0"/>			
@@ -129,5 +56,78 @@ v.2.2.0:
 - Addic7ed.com login support. Check addon settings.
 - New addon icon and fanart (thanks to Jean-Pierre).</news>			
   			<reuselanguageinvoker>false</reuselanguageinvoker>			
+		</extension>		
+	</addon>	<addon id="script.service.playtime" name="Playtime label" provider-name="Roman_V_M" version="0.0.6">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.1.0"/>			    
+  		</requires>		
+  		<extension library="default.py" point="xbmc.service" start="[login|startup]">
+  </extension>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en">Playtime/Battery label</summary>			
+    			<description lang="en">Shows play times and battery level on fullscreen video.</description>			
+  		</extension>		
+	</addon>	<addon id="script.module.simpleplugin" name="SimplePlugin" provider-name="Roman V.M." version="2.3.2">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.19.0"/>			
+  		</requires>		
+  		<extension library="libs" point="xbmc.python.module"/>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en">SimplePlugin micro-framework</summary>			
+    			<description lang="en">SimplePlugin micro-framework that simplifies Kodi content plugin programming.</description>			
+    			<license>GNU GPL v.3</license>			
+    			<forum>http://forum.kodi.tv/showthread.php?tid=237532</forum>			
+    			<website>http://romanvm.github.io/script.module.simpleplugin</website>			
+    			<email>romanvm@yandex.ua</email>			
+    			<source>https://github.com/romanvm/script.module.simpleplugin</source>			
+  		</extension>		
+	</addon>	<addon id="plugin.video.yatp" name="Yet Another Torrent Player" provider-name="Roman V.M." version="3.3.2">		
+		<requires>			
+  			<import addon="xbmc.python" version="2.19.0"/>			
+  			<import addon="script.module.requests" version="2.6.0"/>			
+  			<import addon="script.module.simpleplugin" version="1.10.0"/>			
+  			<import addon="script.module.libtorrent" version="1.0.9"/>			
+		</requires>		
+		<extension library="main.py" point="xbmc.python.pluginsource">			
+  			<provides>video</provides>			
+		</extension>		
+		<extension library="server.py" point="xbmc.service" start="[login|startup]"/>		
+		<extension point="xbmc.addon.metadata">			
+  			<summary lang="en">Yet Another Torrent Player</summary>			
+  			<description lang="en">A torrent client that allows to play video torrents
+    while downloading them in the background.</description>			
+  			<platform>all</platform>			
+		</extension>		
+	</addon>	<addon id="script.module.libtorrent" name="python-libtorrent" provider-name="DiMartino, srg70, RussakHH, aisman, inpos" version="1.1.1c">		
+  		<requires>			
+    			<import addon="xbmc.python" version="2.1.0"/>			
+  		</requires>		
+  		<extension library="default.py" point="xbmc.python.script">			
+    			<provides>executable</provides>			
+  		</extension>		
+  		<extension library="python_libtorrent" point="xbmc.python.module"/>		
+  		<extension point="xbmc.addon.metadata">			
+    			<platform>all</platform>			
+    			<summary lang="en">script.module.libtorrent is a Kodi module that makes easy import of python-libtorrent for you.</summary>			
+    			<summary lang="ru">script.module.libtorrent - модуль Kodi, который упрощает импорт библиотеки python-libtorrent.</summary>			
+    			<license>MIT License</license>			
+    			<source>https://github.com/DiMartinoXBMC/script.module.libtorrent</source>			
+  		</extension>		
+  		<extension point="xbmc.python.module"/>		
+	</addon>	<addon id="plugin.video.external.library" name="Kodi External Video Library" provider-name="Roman V.M." version="0.0.4">		
+		<requires>			
+  			<import addon="xbmc.python" version="2.19.0"/>			
+  			<import addon="script.module.requests" version="2.6.0"/>			
+  			<import addon="script.module.simpleplugin" version="2.0"/>			
+		</requires>		
+		<extension library="main.py" point="xbmc.python.pluginsource">			
+  			<provides>video</provides>			
+		</extension>		
+		<extension library="service.py" point="xbmc.service"/>		
+		<extension point="xbmc.addon.metadata">			
+  			<summary lang="en">Kodi External Video Library</summary>			
+  			<description lang="en">A plugin that allows to browse video library on an external Kodi instance.</description>			
 		</extension>		
 	</addon></addons>
